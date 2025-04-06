@@ -1,4 +1,4 @@
-import {useMemo } from "react";
+import { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
 import { AssetForm } from "./AssetForm";
@@ -51,8 +51,8 @@ export const PortfolioOverview = () => {
           if (e.key === "Enter") dispatch(removeAsset(asset.id));
         }}
       >
-        <strong>{asset.name}</strong> — {asset.amount} × ${asset.currentPrice.toFixed(2)} = $
-        {value.toFixed(2)} ({share}%)
+        <strong>{asset.name}</strong> — {asset.amount} × $
+        {asset.currentPrice.toFixed(2)} = ${value.toFixed(2)} ({share}%)
       </motion.div>
     );
   };
@@ -63,12 +63,7 @@ export const PortfolioOverview = () => {
       <AssetForm />
 
       <section aria-label="Список активов" className="asset-list-container">
-        <List
-          height={400}
-          itemCount={assets.length}
-          itemSize={60}
-          width="100%"
-        >
+        <List height={400} itemCount={assets.length} itemSize={60} width="100%">
           {Row}
         </List>
       </section>
@@ -86,8 +81,11 @@ export const PortfolioOverview = () => {
               outerRadius={100}
               label
             >
-              {pieData.map((index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              {pieData.map((_, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Pie>
             <Tooltip />
