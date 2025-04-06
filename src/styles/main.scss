@@ -1,0 +1,31 @@
+// styles/main.scss
+
+.app {
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .asset-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  
+    input, select {
+      padding: 0.25rem;
+    }
+  
+    button {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  
+  .asset-item {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #f7f7f7;
+    }
+  }
+  
