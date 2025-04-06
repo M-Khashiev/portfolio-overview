@@ -86,7 +86,7 @@ export const PortfolioOverview = () => {
               outerRadius={100}
               label
             >
-              {pieData.map((entry, index) => (
+              {pieData.map((index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
